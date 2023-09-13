@@ -1,0 +1,25 @@
+<!-- app.component.html -->
+
+<div class="container">
+  <button (click)="refreshPage()">CLICK ME TO SEE NEW CHARACTERS</button>
+  
+  <div *ngIf="characterData">
+    <h1>{{ characterData.name }}</h1>
+    <div>
+      <p><strong>Status:</strong> {{ characterData.status }}</p>
+      <p><strong>Species:</strong> {{ characterData.species }}</p>
+    </div>
+    <div>
+      <h2>Origin:</h2>
+      <p><strong>Name:</strong> {{ characterData.origin.name }}</p>
+    </div>
+    <div>
+      <h2>Location:</h2>
+      <p><strong>Name:</strong> {{ characterData.location.name }}</p>
+    </div>
+    <div>
+      <h2>Image:</h2>
+      <img [src]="characterData.image" alt="{{ characterData.name }}">
+    </div>
+  </div>
+</div>
